@@ -55,14 +55,13 @@ function generatePassword() {
         confirmLowercase = confirm("Do you want lowercase letters?");
     };
 
-    // Else if for no selection
+    // if for no selections
     if (!confirmNumber && !confirmCharacter && !confirmUppercase && !confirmLowercase) {
         options = alert("You must choose something!");
 
     }
     // Else if for all options
     else if (confirmNumber && confirmCharacter && confirmUppercase && confirmLowercase) {
-
         options = number.concat(character, letterUp, letter);
     }
     // Else if for 3 options
@@ -113,13 +112,13 @@ function generatePassword() {
         options = letter;
     };
     
-    // empty variable to join random characters into
+    // empty array to join random characters into
     var password = [];
  
     // for loop to generate random characters and push to password
     for (var i = 0; i < start; i++) {
-        var pickChoices = options[Math.floor(Math.random() * options.length)];
-        password.push(pickChoices);
+        var pickOptions = options[Math.floor(Math.random() * options.length)];
+        password.push(pickOptions);
     }
     // take password from for loop and return to a variable 
     var passwordText = password.join("");
